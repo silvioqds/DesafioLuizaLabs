@@ -1,10 +1,14 @@
-﻿using System;
+﻿
+
 using System.Collections.Generic;
-using System.Text;
 
 namespace API.LuizaLabs.Domain.Models
 {
-    class Cliente
+    public class Cliente : Base
     {
+
+        public string Name { get; set; }
+        public string Email { get; set; }        
+
     }
 }

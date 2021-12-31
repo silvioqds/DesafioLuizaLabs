@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\API.LuizaLabs.Domain\API.LuizaLabs.Domain.csproj" />
+    <ProjectReference Include="..\API.LuizaLabs.Domain.Core\API.LuizaLabs.Domain.Core.csproj" />
   </ItemGroup>
 
 </Project>

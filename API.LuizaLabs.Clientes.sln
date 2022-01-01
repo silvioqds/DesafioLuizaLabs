@@ -3,27 +3,37 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31402.337
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.LuizaLabs.Clientes", "API.LuizaLabs.Clientes\API.LuizaLabs.Clientes.csproj", "{D6A17F7E-E7C8-43A5-9999-B3D5005D401D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.LuizaLabs.Clientes", "API.LuizaLabs.Clientes\API.LuizaLabs.Clientes.csproj", "{D6A17F7E-E7C8-43A5-9999-B3D5005D401D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.LuizaLabs.Domain", "API.LuizaLabs.Domain\API.LuizaLabs.Domain.csproj", "{F0C8955E-9534-4AA6-976E-BB05B7C01196}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.LuizaLabs.Domain", "API.LuizaLabs.Domain\API.LuizaLabs.Domain.csproj", "{F0C8955E-9534-4AA6-976E-BB05B7C01196}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03.Domain", "03.Domain", "{4C95319A-922F-4ACF-A02D-3D0F6FD75B32}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.LuizaLabs.Domain.Core", "API.LuizaLabs.Domain.Core\API.LuizaLabs.Domain.Core.csproj", "{397F78A1-A8CC-4EAE-BCE8-24A5DD4B72DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.LuizaLabs.Domain.Core", "API.LuizaLabs.Domain.Core\API.LuizaLabs.Domain.Core.csproj", "{397F78A1-A8CC-4EAE-BCE8-24A5DD4B72DA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01.UI", "01.UI", "{29CAA8BE-E5D3-43B9-966F-9B5C11AAD70C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.LuizaLabs.Services", "API.LuizaLabs.Services\API.LuizaLabs.Services.csproj", "{036717F6-DAE4-4892-813B-7CA18460FB22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.LuizaLabs.Services", "API.LuizaLabs.Services\API.LuizaLabs.Services.csproj", "{036717F6-DAE4-4892-813B-7CA18460FB22}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02.Application", "02.Application", "{32FB9C85-EB55-4AF0-9BDB-7B04F4312532}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.LuizaLabs.Application.DTO", "API.LuizaLabs.Application.DTO\API.LuizaLabs.Application.DTO.csproj", "{6B69A403-C816-49F3-9D87-9C933DAF2AF0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.LuizaLabs.Application.DTO", "API.LuizaLabs.Application.DTO\API.LuizaLabs.Application.DTO.csproj", "{6B69A403-C816-49F3-9D87-9C933DAF2AF0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.LuizaLabs.Application", "API.LuizaLabs.Application\API.LuizaLabs.Application.csproj", "{121FDD4A-D471-42CA-B4C9-109B0CF05801}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.LuizaLabs.Application", "API.LuizaLabs.Application\API.LuizaLabs.Application.csproj", "{121FDD4A-D471-42CA-B4C9-109B0CF05801}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04.CrossCutting", "04.CrossCutting", "{9F8DE9B6-01B9-41E3-A1F6-ADE9826AC10D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CrossCutting", "CrossCutting", "{9F8DE9B6-01B9-41E3-A1F6-ADE9826AC10D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.LuizaLabs.CrossCuting.Adapter", "API.LuizaLabs.CrossCuting.Adapter\API.LuizaLabs.CrossCuting.Adapter.csproj", "{2BCB607A-5978-4F92-A720-D253D5449A7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.LuizaLabs.CrossCuting.Adapter", "API.LuizaLabs.CrossCuting.Adapter\API.LuizaLabs.CrossCuting.Adapter.csproj", "{2BCB607A-5978-4F92-A720-D253D5449A7E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04.Infrastruture", "04.Infrastruture", "{D4310C52-DCA0-41CE-8016-5B062F4C6739}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{0CD8C4D2-2CF6-4E95-8193-250627B8BE5E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IOC", "IOC", "{D4408535-6428-4041-A665-167C8F65167D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.LuizaLabs.Data", "API.LuizaLabs.Data\API.LuizaLabs.Data.csproj", "{56F3C053-9A12-4407-982A-EE86642DF8EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.LuizaLabs.Infra.Repository", "API.LuizaLabs.Infra.Repository\API.LuizaLabs.Infra.Repository.csproj", "{E1B80852-6583-43F9-991D-DA930FAF4B3B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +69,14 @@ Global
 		{2BCB607A-5978-4F92-A720-D253D5449A7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2BCB607A-5978-4F92-A720-D253D5449A7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2BCB607A-5978-4F92-A720-D253D5449A7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56F3C053-9A12-4407-982A-EE86642DF8EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56F3C053-9A12-4407-982A-EE86642DF8EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56F3C053-9A12-4407-982A-EE86642DF8EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56F3C053-9A12-4407-982A-EE86642DF8EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1B80852-6583-43F9-991D-DA930FAF4B3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1B80852-6583-43F9-991D-DA930FAF4B3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1B80852-6583-43F9-991D-DA930FAF4B3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1B80852-6583-43F9-991D-DA930FAF4B3B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -70,7 +88,12 @@ Global
 		{036717F6-DAE4-4892-813B-7CA18460FB22} = {4C95319A-922F-4ACF-A02D-3D0F6FD75B32}
 		{6B69A403-C816-49F3-9D87-9C933DAF2AF0} = {32FB9C85-EB55-4AF0-9BDB-7B04F4312532}
 		{121FDD4A-D471-42CA-B4C9-109B0CF05801} = {32FB9C85-EB55-4AF0-9BDB-7B04F4312532}
+		{9F8DE9B6-01B9-41E3-A1F6-ADE9826AC10D} = {D4310C52-DCA0-41CE-8016-5B062F4C6739}
 		{2BCB607A-5978-4F92-A720-D253D5449A7E} = {9F8DE9B6-01B9-41E3-A1F6-ADE9826AC10D}
+		{0CD8C4D2-2CF6-4E95-8193-250627B8BE5E} = {D4310C52-DCA0-41CE-8016-5B062F4C6739}
+		{D4408535-6428-4041-A665-167C8F65167D} = {D4310C52-DCA0-41CE-8016-5B062F4C6739}
+		{56F3C053-9A12-4407-982A-EE86642DF8EA} = {0CD8C4D2-2CF6-4E95-8193-250627B8BE5E}
+		{E1B80852-6583-43F9-991D-DA930FAF4B3B} = {0CD8C4D2-2CF6-4E95-8193-250627B8BE5E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1EEE0225-2650-45A9-9C5A-03DBF1CEC9A6}

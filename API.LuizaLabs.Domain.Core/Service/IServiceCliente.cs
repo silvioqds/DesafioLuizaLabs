@@ -5,6 +5,6 @@ namespace API.LuizaLabs.Domain.Core.Service
 {
     public interface IServiceCliente : IServiceBase<Cliente>, IDisposable
     {
-        Product GetByEmail(string email);
+        Cliente GetByEmail(string email);
     }
 }

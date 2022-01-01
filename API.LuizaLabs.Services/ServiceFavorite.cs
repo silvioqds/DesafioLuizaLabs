@@ -18,14 +18,14 @@ namespace API.LuizaLabs.Services
             this._repositoryFavorite = repositoryFavorite;
         }
 
-        public IEnumerable<Product> GetByCliente(int ID)
+        public IEnumerable<Favorite> GetByCliente(int ID)
         {
-            throw new NotImplementedException();
+            return _repositoryFavorite.GetByCliente(ID);
         }
 
-        public IEnumerable<Product> GetByProduto(int ID)
+        public IEnumerable<Favorite> GetByProduto(int ID)
         {
-            throw new NotImplementedException();
+            return _repositoryFavorite.GetByProduto(ID);
         }
     }
 }

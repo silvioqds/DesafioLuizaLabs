@@ -7,8 +7,8 @@ namespace API.LuizaLabs.Domain.Core.Service
 {
     public interface IServiceFavorite : IServiceBase<Favorite>, IDisposable
     {
-        IEnumerable<Product> GetByCliente(int ID);
+        IEnumerable<Favorite> GetByCliente(int ID);
 
-        IEnumerable<Product> GetByProduto(int ID);
+        IEnumerable<Favorite> GetByProduto(int ID);
     }
 }

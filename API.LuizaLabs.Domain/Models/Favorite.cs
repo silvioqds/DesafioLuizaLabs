@@ -10,5 +10,7 @@ namespace API.LuizaLabs.Domain.Models
         public int ID_CLIENTE { get; set; }
         public int ID_PRODUTO { get; set; }
 
+        public virtual Cliente Cliente { get; set; }
+        public virtual Product Product { get; set; }
     }
 }

@@ -4,6 +4,6 @@ namespace API.LuizaLabs.Domain.Core.Repository
 {
     public interface IRepositoryCliente : IRepositoryBase<Cliente>
     {
-        Product GetByEmail(string email);
+        Cliente GetByEmail(string email);
     }
 }

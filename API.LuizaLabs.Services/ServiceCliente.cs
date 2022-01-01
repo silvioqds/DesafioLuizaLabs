@@ -18,7 +18,7 @@ namespace API.LuizaLabs.Services
             _repositoryCliente = repository;
         }
 
-        public Product GetByEmail(string email)
+        public Cliente GetByEmail(string email)
         {
             return _repositoryCliente.GetByEmail(email);
         }

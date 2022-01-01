@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="6.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\API.LuizaLabs.Application\API.LuizaLabs.Application.csproj" />
+    <ProjectReference Include="..\API.LuizaLabs.Infra.Repository\API.LuizaLabs.Infra.Repository.csproj" />
+    <ProjectReference Include="..\API.LuizaLabs.Services\API.LuizaLabs.Services.csproj" />
+  </ItemGroup>
+
+</Project>

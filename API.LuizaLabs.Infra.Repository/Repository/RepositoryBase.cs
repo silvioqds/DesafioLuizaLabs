@@ -70,7 +70,7 @@ namespace API.LuizaLabs.Infra.Repository.Repository
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            _context.Dispose();
         }
 
     }

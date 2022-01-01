@@ -8,9 +8,10 @@ namespace API.LuizaLabs.Application.DTO.DTO
 
         public int? ID { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Name is required")]
         public string Name { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "Email is required")]
         public string Email { get; set; }
 
     }

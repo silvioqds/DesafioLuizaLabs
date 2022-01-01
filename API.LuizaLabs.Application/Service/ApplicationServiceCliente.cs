@@ -32,14 +32,14 @@ namespace API.LuizaLabs.Application.Service
 
         public IEnumerable<ClienteDTO> GetAll()
         {
-            throw new NotImplementedException();
+            return _mapper.Map<List<ClienteDTO>>(_serviceCliente.GetAll());
         }
 
         public void Add(ClienteDTO obj)
         {
             if (!(GetByEmail(obj.Email) is null))
             {
-
+                throw new Exception("E-mail já cadastrado");
             }
 
             _serviceCliente.Save(_mapper.Map<Cliente>(obj));
@@ -47,12 +47,12 @@ namespace API.LuizaLabs.Application.Service
 
         public void Update(ClienteDTO obj)
         {
-            throw new NotImplementedException();
+            _serviceCliente.Update(_mapper.Map<Cliente>(obj));
         }
 
         public void Remove(ClienteDTO obj)
         {
-            throw new NotImplementedException();
+            _serviceCliente.Remove(_mapper.Map<Cliente>(obj));
         }
 
 

@@ -1,8 +1,12 @@
 using API.LuizaLabs.CrossCuting.Adapter;
+using API.LuizaLabs.Data;
+using API.LuizaLabs.Infra.IOC;
+using Autofac;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -25,10 +29,19 @@ namespace API.LuizaLabs.Clientes
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {          
-            services.AddControllers();
+        {
+            var connection = Configuration["SQLConnection:SQLConnectionString"];
+            services.AddDbContext<SQLContext>(options => options.UseSqlServer(connection));
+            services.AddMemoryCache();
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
+            services.AddControllers();
             services.AddAutoMapper(typeof(AutoMapping));
+        }
+
+        public void ConfigureContainer(ContainerBuilder builder)
+        {
+            builder.RegisterModule(new ModuleIOC());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -11,6 +11,7 @@
 
 # SCRIPT SQL
 #Execute o script.sql na raiz do projeto em sua instância do SQL SERVER.
+
 ![image](https://user-images.githubusercontent.com/36198905/148005987-4a579ed3-218b-4922-af50-d7725b2835b5.png)
 
 
@@ -20,9 +21,11 @@ A partir do token você irá conseguir realizar as requisições para os metódo
 
 # Exemplo cadastro de produto:
 Coloque o token na aba Authorization
+
 ![image](https://user-images.githubusercontent.com/36198905/148004438-3c68f36f-c2b4-4db3-9490-66c801d0e85f.png)
 
 Em Seguida realize o post com o json para a API
+
 ![image](https://user-images.githubusercontent.com/36198905/148004330-946023fa-ee29-42ff-921a-47aae1e6d030.png)
 
 Pronto!

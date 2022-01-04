@@ -1,6 +1,6 @@
 # Desafio LuizaLabs
 
-# API para realizar o cadastro, atualização, remoção e visualização de Clientes, Produtos e adicionar produtos a lista de favoritos dos clientes!
+# API para realizar o cadastro, atualização, remoção e visualização de clientes, produtos e adicionar produtos a lista de favoritos dos clientes!
 
 #BIBLIOTECA E METODOLOGIAS UTILIZADAS NO DEV:
 - Metodologia DDD (Domain Driven Design)

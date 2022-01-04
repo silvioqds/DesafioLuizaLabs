@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using API.LuizaLabs.Domain.Models;
+using System.Collections.Generic;
 
 
 namespace API.LuizaLabs.Domain.Core.Repository
 {
-    public interface IRepositoryBase<T> where T : class
+    public interface IRepositoryBase<T> where T : Base
     {
         T Get(int ID);
 

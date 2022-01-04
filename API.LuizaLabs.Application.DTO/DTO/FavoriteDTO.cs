@@ -8,8 +8,8 @@ namespace API.LuizaLabs.Application.DTO.DTO
     {
 
         public int? ID { get; set; }
-        public int ID_CLIENTE { get; set; }
-        public int ID_PRODUTO { get; set; }
+        public int ClienteId { get; set; }
+        public int ProductId { get; set; }
 
 
     }

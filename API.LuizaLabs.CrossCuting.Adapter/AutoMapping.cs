@@ -13,6 +13,7 @@ namespace API.LuizaLabs.CrossCuting.Adapter
             CreateMap<Product, ProductDTO>().ReverseMap();
             CreateMap<Cliente, ClienteDTO>().ReverseMap();
             CreateMap<Favorite, FavoriteDTO>().ReverseMap();
+            CreateMap<User, UserDTO>().ReverseMap();
         }
     }
 }

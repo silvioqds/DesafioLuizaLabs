@@ -10,5 +10,7 @@ namespace API.LuizaLabs.Domain.Core.Repository
         IEnumerable<Favorite> GetByCliente(int ID);
 
         IEnumerable<Favorite> GetByProduto(int ID);
+
+        Favorite GetByProdutoAndCliente(int ProdutoID, int ClienteID);
     }
 }

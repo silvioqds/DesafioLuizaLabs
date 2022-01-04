@@ -1,5 +1,6 @@
 ﻿using API.LuizaLabs.Data;
 using API.LuizaLabs.Domain.Core.Repository;
+using API.LuizaLabs.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Text;
 
 namespace API.LuizaLabs.Infra.Repository.Repository
 {
-    public class RepositoryBase<T> : IDisposable, IRepositoryBase<T> where T : class
+    public class RepositoryBase<T> : IDisposable, IRepositoryBase<T> where T : Base
     {
 
         private readonly SQLContext _context;

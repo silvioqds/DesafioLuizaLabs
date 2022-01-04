@@ -9,36 +9,44 @@ using System.Threading.Tasks;
 
 namespace API.LuizaLabs.Clientes.Controllers
 {
-
     [Route("api")]
     [ApiController]
-    public class ClienteController : ControllerBase
+    public class FavoriteController : ControllerBase
     {
 
-        private readonly IApplicationServiceCliente _applicationServiceCliente;
+        private readonly IApplicationServiceFavorite _serviceFavorite;
 
-        public ClienteController(IApplicationServiceCliente application)
+        public FavoriteController(IApplicationServiceFavorite serviceFavorite)
         {
-            this._applicationServiceCliente = application;
+            this._serviceFavorite = serviceFavorite;
         }
 
+
         [Authorize]
-        [HttpGet("cliente")]
+        [HttpGet("favorite")]
         public ActionResult<IEnumerable<string>> Get()
         {
-            return Ok(_applicationServiceCliente.GetAll());
+            return Ok(_serviceFavorite.GetAll());
         }
 
         [Authorize]
-        [HttpGet("cliente/{id}")]
-        public ActionResult<string> Get(int id)
+        [HttpGet("favorite/favorite/{id}")]
+        public ActionResult<string> GetByCliente(int id)
         {
-            return Ok(_applicationServiceCliente.Get(id));
+            return Ok(_serviceFavorite.GetByCliente(id));
         }
 
         [Authorize]
-        [HttpPost("cliente")]
-        public ActionResult Post([FromBody] ClienteDTO cliente)
+        [HttpGet("favorite/produto/{id}")]
+        public ActionResult<string> GetByProduto(int id)
+        {
+            return Ok(_serviceFavorite.GetByProduto(id));
+        }
+
+
+        [Authorize]
+        [HttpPost("favorite")]
+        public ActionResult Post([FromBody] FavoriteDTO favorite)
         {
             try
             {
@@ -50,8 +58,8 @@ namespace API.LuizaLabs.Clientes.Controllers
                     return BadRequest(message);
                 }
 
-                _applicationServiceCliente.Add(cliente);
-                return Ok(new { message = "Cliente cadastrado com sucesso" });
+                _serviceFavorite.Add(favorite);
+                return Ok(new { message = "Produto favoritado cadastrado com sucesso" });
             }
             catch (Exception ex)
             {
@@ -60,8 +68,8 @@ namespace API.LuizaLabs.Clientes.Controllers
         }
 
         [Authorize]
-        [HttpPut("cliente")]
-        public ActionResult Put([FromBody] ClienteDTO cliente)
+        [HttpPut("favorite")]
+        public ActionResult Put([FromBody] FavoriteDTO favorite)
         {
             try
             {
@@ -73,8 +81,8 @@ namespace API.LuizaLabs.Clientes.Controllers
                     return BadRequest(message);
                 }
 
-                _applicationServiceCliente.Update(cliente);
-                return Ok(new { message = "Cliente atualizado com sucesso" });
+                _serviceFavorite.Update(favorite);
+                return Ok(new { message = "Produto atualizado com sucesso" });
             }
             catch (Exception ex)
             {
@@ -83,8 +91,8 @@ namespace API.LuizaLabs.Clientes.Controllers
         }
 
         [Authorize]
-        [HttpDelete("cliente")]
-        public ActionResult Delete([FromBody] ClienteDTO cliente)
+        [HttpDelete("favorite")]
+        public ActionResult Delete([FromBody] FavoriteDTO favorite)
         {
             try
             {
@@ -96,17 +104,14 @@ namespace API.LuizaLabs.Clientes.Controllers
                     return BadRequest(message);
                 }
 
-                _applicationServiceCliente.Remove(cliente);
-                return Ok(new { message = "Cliente removido com sucesso!" });
+                _serviceFavorite.Remove(favorite);
+                return Ok(new { message = "Produto removido com sucesso!" });
             }
             catch (Exception)
             {
                 return StatusCode(500);
             }
         }
-
-
-
 
     }
 }

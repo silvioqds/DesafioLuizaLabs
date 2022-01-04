@@ -19,6 +19,12 @@ namespace API.LuizaLabs.Services
             this._repositoryProduct = repositoryProduct;
         }
 
+        public IEnumerable<Product> GetAll(int? page)
+        {
+            page ??= 1;
+            if (page <= 0) page = 1;
 
+            return _repositoryProduct.GetAll(page.GetValueOrDefault());
+        }
     }
 }

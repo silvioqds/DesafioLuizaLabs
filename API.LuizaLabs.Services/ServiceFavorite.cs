@@ -27,5 +27,10 @@ namespace API.LuizaLabs.Services
         {
             return _repositoryFavorite.GetByProduto(ID);
         }
+
+        public Favorite GetByProdutoAndCliente(int ClienteID, int ProdutoID)
+        {
+            return _repositoryFavorite.GetByProdutoAndCliente(ClienteID, ProdutoID);
+        }
     }
 }

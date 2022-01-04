@@ -13,16 +13,28 @@ namespace API.LuizaLabs.Application.Service
     {
 
         private readonly IServiceFavorite _serviceFavorite;
+        private readonly IServiceProduct _serviceProduct;
         private readonly IMapper _mapper;
 
-        public ApplicationServiceFavorite(IServiceFavorite serviceFavorite, IMapper mapper)
+        public ApplicationServiceFavorite(IServiceFavorite serviceFavorite, IServiceProduct serviceProduct, IMapper mapper)
         {
             this._serviceFavorite = serviceFavorite;
+            this._serviceProduct = serviceProduct;
             this._mapper = mapper;
         }
 
         public void Add(FavoriteDTO obj)
         {
+            Product product = _serviceProduct.Get(obj.ProductId);
+
+            if (product is null)
+                throw new Exception("Produto não cadastrado");
+
+            Favorite favorite = GetByProdutoAndCliente(obj.ClienteId, obj.ProductId);
+
+            if (!(favorite is null))
+                throw new Exception("Não é possível adicionar o mesmo produto na lista de favoritos");
+
             _serviceFavorite.Save(_mapper.Map<Favorite>(obj));
         }
 
@@ -51,10 +63,22 @@ namespace API.LuizaLabs.Application.Service
             _serviceFavorite.Update(_mapper.Map<Favorite>(obj));
         }
 
+        private IEnumerable<ProductDTO> GetByCliente(int ID_CLIENTE, int ID_PRODUTO)
+        {
+            return _mapper.Map<List<ProductDTO>>(_serviceFavorite.GetByCliente(ID_CLIENTE));
+        }
+
+
+        public Favorite GetByProdutoAndCliente(int ClienteID, int ProdutoID)
+        {
+            return _serviceFavorite.GetByProdutoAndCliente(ClienteID, ProdutoID);
+        }
+
         public void Dispose()
         {
             _serviceFavorite.Dispose();
         }
+
 
     }
 }

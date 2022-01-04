@@ -27,31 +27,29 @@ namespace API.LuizaLabs.Application.Service
             return _mapper.Map<ProductDTO>(_serviceProduct.Get(ID));
         }
 
-        public IEnumerable<ProductDTO> GetAll()
+        public IEnumerable<ProductDTO> GetAll(int? page)
         {
-            throw new NotImplementedException();
+            return _mapper.Map<List<ProductDTO>>(_serviceProduct.GetAll());
         }
 
         public void Add(ProductDTO obj)
-        {
-
-            Product product = _mapper.Map<Product>(obj);
-            _serviceProduct.Save(product);
+        {            
+            _serviceProduct.Save(_mapper.Map<Product>(obj));
         }
 
         public void Update(ProductDTO obj)
-        {
-            throw new NotImplementedException();
+        {            
+            _serviceProduct.Save(_mapper.Map<Product>(obj));
         }
 
         public void Remove(ProductDTO obj)
-        {
-            throw new NotImplementedException();
+        {            
+            _serviceProduct.Remove(_mapper.Map<Product>(obj));
         }
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            _serviceProduct.Dispose();
         }
 
     }

@@ -1,3 +1,6 @@
+using API.LuizaLabs.Application.Helpers;
+using API.LuizaLabs.Application.Interface;
+using API.LuizaLabs.Application.Service;
 using API.LuizaLabs.CrossCuting.Adapter;
 using API.LuizaLabs.Data;
 using API.LuizaLabs.Infra.IOC;
@@ -30,15 +33,23 @@ namespace API.LuizaLabs.Clientes
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //CONFIGURATION SQL SERVER
             var connection = Configuration["SQLConnection:SQLConnectionString"];
             services.AddDbContext<SQLContext>(options => options.UseSqlServer(connection));
-            services.AddMemoryCache();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
+            /////////////////////////////////////
+            services.AddMemoryCache();
             services.AddControllers();
+
+            //AUTOMAPPER
             services.AddAutoMapper(typeof(AutoMapping));
+
+            // Configura secret                        
+            services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));      
         }
 
+        // INJEÇÃO DE DEPENDÊNCIA
         public void ConfigureContainer(ContainerBuilder builder)
         {
             builder.RegisterModule(new ModuleIOC());
@@ -56,13 +67,21 @@ namespace API.LuizaLabs.Clientes
 
             app.UseRouting();
 
+            //POLITICAS DAS ROTAS GLOBAIS
+            app.UseCors(x => x.AllowAnyOrigin()
+                              .AllowAnyMethod()
+                              .AllowAnyHeader());
+
+            //JWT AUTH
+            app.UseMiddleware<JWTMiddleware>();
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
-            
-        }       
+
+        }
     }
 }

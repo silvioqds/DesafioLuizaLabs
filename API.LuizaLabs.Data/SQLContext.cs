@@ -13,11 +13,13 @@ namespace API.LuizaLabs.Data
             base(options)
         { }
 
-        public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<Cliente> Cliente { get; set; }
 
-        public DbSet<Product> Products { get; set; }
+        public DbSet<Product> Product { get; set; }
 
-        public DbSet<Favorite> Favorites { get; set; }
+        public DbSet<Favorite> Favorite { get; set; }
+
+        public DbSet<User> Users { get; set; }
 
         public override int SaveChanges()
         {

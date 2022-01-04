@@ -5,6 +5,6 @@ namespace API.LuizaLabs.Domain.Core.Service
 {
     public interface IServiceProduct : IServiceBase<Product>, IDisposable
     {
-
+        
     }
 }

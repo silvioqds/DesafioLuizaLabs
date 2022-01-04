@@ -9,36 +9,36 @@ using System.Threading.Tasks;
 
 namespace API.LuizaLabs.Clientes.Controllers
 {
-
     [Route("api")]
     [ApiController]
-    public class ClienteController : ControllerBase
+    public class ProductController : ControllerBase
     {
+        private readonly IApplicationServiceProduct _serviceProduct;
 
-        private readonly IApplicationServiceCliente _applicationServiceCliente;
 
-        public ClienteController(IApplicationServiceCliente application)
+        public ProductController(IApplicationServiceProduct serviceProduct)
         {
-            this._applicationServiceCliente = application;
+            this._serviceProduct = serviceProduct;
+        }
+
+
+        [Authorize]
+        [HttpGet("product/{page?}")]
+        public ActionResult<IEnumerable<string>> Get(int? page)
+        {
+            return Ok(_serviceProduct.GetAll(page));
         }
 
         [Authorize]
-        [HttpGet("cliente")]
-        public ActionResult<IEnumerable<string>> Get()
-        {
-            return Ok(_applicationServiceCliente.GetAll());
-        }
-
-        [Authorize]
-        [HttpGet("cliente/{id}")]
+        [HttpGet("product/{id}")]
         public ActionResult<string> Get(int id)
         {
-            return Ok(_applicationServiceCliente.Get(id));
+            return Ok(_serviceProduct.Get(id));
         }
 
         [Authorize]
-        [HttpPost("cliente")]
-        public ActionResult Post([FromBody] ClienteDTO cliente)
+        [HttpPost("product")]
+        public ActionResult Post([FromBody] ProductDTO product)
         {
             try
             {
@@ -50,8 +50,8 @@ namespace API.LuizaLabs.Clientes.Controllers
                     return BadRequest(message);
                 }
 
-                _applicationServiceCliente.Add(cliente);
-                return Ok(new { message = "Cliente cadastrado com sucesso" });
+                _serviceProduct.Add(product);
+                return Ok(new { message = "Produto cadastrado com sucesso" });
             }
             catch (Exception ex)
             {
@@ -60,8 +60,8 @@ namespace API.LuizaLabs.Clientes.Controllers
         }
 
         [Authorize]
-        [HttpPut("cliente")]
-        public ActionResult Put([FromBody] ClienteDTO cliente)
+        [HttpPut("product")]
+        public ActionResult Put([FromBody] ProductDTO product)
         {
             try
             {
@@ -73,8 +73,8 @@ namespace API.LuizaLabs.Clientes.Controllers
                     return BadRequest(message);
                 }
 
-                _applicationServiceCliente.Update(cliente);
-                return Ok(new { message = "Cliente atualizado com sucesso" });
+                _serviceProduct.Update(product);
+                return Ok(new { message = "Produto atualizado com sucesso" });
             }
             catch (Exception ex)
             {
@@ -83,8 +83,8 @@ namespace API.LuizaLabs.Clientes.Controllers
         }
 
         [Authorize]
-        [HttpDelete("cliente")]
-        public ActionResult Delete([FromBody] ClienteDTO cliente)
+        [HttpDelete("product")]
+        public ActionResult Delete([FromBody] ProductDTO product)
         {
             try
             {
@@ -96,17 +96,14 @@ namespace API.LuizaLabs.Clientes.Controllers
                     return BadRequest(message);
                 }
 
-                _applicationServiceCliente.Remove(cliente);
-                return Ok(new { message = "Cliente removido com sucesso!" });
+                _serviceProduct.Remove(product);
+                return Ok(new { message = "Produto removido com sucesso!" });
             }
             catch (Exception)
             {
                 return StatusCode(500);
             }
         }
-
-
-
 
     }
 }

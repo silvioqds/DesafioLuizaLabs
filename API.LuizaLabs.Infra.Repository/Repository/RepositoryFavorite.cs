@@ -21,12 +21,17 @@ namespace API.LuizaLabs.Infra.Repository.Repository
 
         public IEnumerable<Favorite> GetByCliente(int ID)
         {
-            return _context.Set<Favorite>().Where(x => x.ID_CLIENTE == ID).ToList();
+            return _context.Set<Favorite>().Where(x => x.ClienteId == ID).ToList();
         }
 
         public IEnumerable<Favorite> GetByProduto(int ID)
         {
-            return _context.Set<Favorite>().Where(x => x.ID_PRODUTO == ID).ToList();
+            return _context.Set<Favorite>().Where(x => x.ProductId == ID).ToList();
+        }
+
+        public Favorite GetByProdutoAndCliente(int ID_CLIENTE, int ID_PRODUTO)
+        {
+            return _context.Set<Favorite>().Where(x => x.ClienteId == ID_CLIENTE && x.ProductId == ID_PRODUTO).FirstOrDefault();
         }
     }
 }

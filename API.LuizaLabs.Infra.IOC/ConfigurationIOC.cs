@@ -20,6 +20,7 @@ namespace API.LuizaLabs.Infra.IOC
             builder.RegisterType<ApplicationServiceCliente>().As<IApplicationServiceCliente>();
             builder.RegisterType<ApplicationServiceProduct>().As<IApplicationServiceProduct>();
             builder.RegisterType<ApplicationServiceFavorite>().As<IApplicationServiceFavorite>();
+            builder.RegisterType<ApplicationServiceUser>().As<IApplicationServiceUser>();
 
             #endregion
 
@@ -27,7 +28,8 @@ namespace API.LuizaLabs.Infra.IOC
 
             builder.RegisterType<ServiceCliente>().As<IServiceCliente>();
             builder.RegisterType<ServiceProduct>().As<IServiceProduct>();
-            builder.RegisterType<ServiceFavorite>().As<ServiceFavorite>();
+            builder.RegisterType<ServiceFavorite>().As<IServiceFavorite>();
+            builder.RegisterType<ServiceUser>().As<IServiceUser>();
 
             #endregion
 
@@ -35,7 +37,8 @@ namespace API.LuizaLabs.Infra.IOC
 
             builder.RegisterType<RepositoryCliente>().As<IRepositoryCliente>();
             builder.RegisterType<RepositoryProduct>().As<IRepositoryProduct>();
-            builder.RegisterType<RepositoryFavorite>().As<RepositoryFavorite>();
+            builder.RegisterType<RepositoryFavorite>().As<IRepositoryFavorite>();
+            builder.RegisterType<RepositoryUser>().As<IRepositoryUser>();
 
             #endregion
 

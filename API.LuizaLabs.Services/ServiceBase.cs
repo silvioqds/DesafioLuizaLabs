@@ -1,11 +1,12 @@
 ﻿using API.LuizaLabs.Domain.Core.Repository;
 using API.LuizaLabs.Domain.Core.Service;
+using API.LuizaLabs.Domain.Models;
 using System;
 using System.Collections.Generic;
 
 namespace API.LuizaLabs.Services
 {
-    public abstract class ServiceBase<T> : IDisposable, IServiceBase<T> where T : class
+    public abstract class ServiceBase<T> : IDisposable, IServiceBase<T> where T : Base
     {
 
         private readonly IRepositoryBase<T> _repository;

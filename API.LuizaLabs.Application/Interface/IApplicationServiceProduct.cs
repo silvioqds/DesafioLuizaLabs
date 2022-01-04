@@ -8,7 +8,7 @@ namespace API.LuizaLabs.Application.Interface
 
         ProductDTO Get(int ID);
 
-        IEnumerable<ProductDTO> GetAll();
+        IEnumerable<ProductDTO> GetAll(int? page);
 
         void Add(ProductDTO obj);
 

@@ -9,6 +9,11 @@
 - Injeção de dependência com a biblioteca AutoFac
 - EntityFrameworkCore
 
+# SCRIPT SQL
+#Execute o script.sql na raiz do projeto em sua instância do SQL SERVER.
+![image](https://user-images.githubusercontent.com/36198905/148005987-4a579ed3-218b-4922-af50-d7725b2835b5.png)
+
+
 # Autenticação via POSTMAN
 ![image](https://user-images.githubusercontent.com/36198905/148004145-b3be2c83-8628-4d14-bc9f-ff8b8e3824c9.png)
 A partir do token você irá conseguir realizar as requisições para os metódos privados da nossa API

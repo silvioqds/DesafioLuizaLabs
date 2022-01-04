@@ -22,7 +22,7 @@ namespace API.LuizaLabs.Application.Service
 
         public ClienteDTO Get(int ID)
         {
-            throw new NotImplementedException();
+            return _mapper.Map<ClienteDTO>(_serviceCliente.Get(ID));
         }
 
         public ClienteDTO GetByEmail(string email)
@@ -59,7 +59,7 @@ namespace API.LuizaLabs.Application.Service
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            _serviceCliente.Dispose();
         }
 
 

@@ -60,7 +60,7 @@ namespace API.LuizaLabs.Clientes.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "O servidor não pode atender a solicitação, contate o administrador do serviço");
+                return StatusCode(500, new { message = "O servidor não pode atender a solicitação, contate o administrador do serviço" });
             }
         }
 

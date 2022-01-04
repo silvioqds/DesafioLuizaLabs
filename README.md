@@ -19,10 +19,5 @@ Coloque o token na aba Authorization
 
 Em Seguida realize o post com o json para a API
 ![image](https://user-images.githubusercontent.com/36198905/148004330-946023fa-ee29-42ff-921a-47aae1e6d030.png)
+
 Pronto!
-
-
-
-
-Author: Silvio Queiroz
-================================

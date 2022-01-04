@@ -10,7 +10,7 @@
 - EntityFrameworkCore
 
 # SCRIPT SQL
-#Execute o script.sql na raiz do projeto em sua instância do SQL SERVER.
+#Execute o arquivo script.sql na raiz do projeto em sua instância do SQL SERVER.
 
 ![image](https://user-images.githubusercontent.com/36198905/148005987-4a579ed3-218b-4922-af50-d7725b2835b5.png)
 
